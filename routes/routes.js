@@ -9,7 +9,7 @@ app.post('/push',async(req,res)=>{
     res.json("data added successfully")
 })
 
-app.get('/get',async(req,res)=>{
+app.get('/get/',async(req,res)=>{
     const dbdatas = await modelfile.find();
     // console.log(dbdatas);
     res.json(dbdatas)
