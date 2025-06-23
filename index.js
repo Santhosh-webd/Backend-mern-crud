@@ -3,7 +3,11 @@ const app = express();
 const cors = require("cors");
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: ['https://littlereviewmain.netlify.app', 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.urlencoded({extended:true}));
 app.use("",require("./routes/routes"))
 
